@@ -1,5 +1,3 @@
-import * as fs from "fs";
-
 interface ScheduleEntry {
   date: string;
   day: string;
@@ -72,6 +70,6 @@ function formatDate(date: Date): string {
 }
 
 const icsContent = generateICS(schedule);
-fs.writeFileSync("hockey_schedule.ics", icsContent);
+Bun.write("./output/hockey_schedule.ics", icsContent);
 
-console.log("ICS file has been generated: hockey_schedule.ics");
+console.log("ICS file has been generated: ./output/hockey_schedule.ics");
